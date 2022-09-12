@@ -33,5 +33,5 @@ const convertIfJson = string => {
 }
 
 
-localStorage.setItem("name", "tim");
+localStorage.setItem("name", "tim", new Date('2022-09-12 22:22:00'));
 console.log(localStorage.getItem("name"))

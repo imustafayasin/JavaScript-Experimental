@@ -8,7 +8,7 @@ localStorage.getItem = (key) => {
         return
     }
 
-    if (convertIfJson(localStorage[key])) {
+    if (isConvertableToJson(localStorage[key])) {
         if ('date' in JSON.parse(localStorage[key])) {
             if (new Date > new Date(JSON.parse(localStorage[key]).date)) {
                 console.warn(`${key} expiration is end`)
@@ -23,7 +23,7 @@ localStorage.getItem = (key) => {
     }
 }
 
-const convertIfJson = string => {
+const isConvertableToJson = string => {
     try {
         return JSON.parse(string);
     }
